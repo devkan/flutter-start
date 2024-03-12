@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
 
+/*
+class Player{
+  String name;
+  Player({required this.name});
+}
+*/
+
 void main() {
+  //var player = Player(name : 'Jone'); // Text("Hello Flutter")가 이처럼 position parameter로 들어가는 것이고..
   runApp(App()); // runApp은 import에서 가져온 함수
 }
 
@@ -13,6 +21,8 @@ class App extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          centerTitle: true, // Appbar의 텍스트 중앙정렬하냐 마냐
+          elevation: 10, // 앱바의 그림자
           title: Text("Hello Flutter"),
         ),
         body: Center(
