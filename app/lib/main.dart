@@ -121,6 +121,7 @@ class App extends StatelessWidget {
                   height: 20,
                 ),
                 Container(
+                  clipBehavior: Clip.hardEdge, // translate로 오버되는 부분을 잘라준다.
                   decoration: BoxDecoration(
                     color: const Color(0xff1f2123),
                     borderRadius: BorderRadius.circular(25),
@@ -128,6 +129,7 @@ class App extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(30),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -163,6 +165,20 @@ class App extends StatelessWidget {
                               ],
                             ),
                           ],
+                        ),
+
+                        // 아이콘을 키우고, translate로 좌,우 위치 이동을 시킴
+                        Transform.scale(
+                          scale: 2.2,
+                          child: Transform.translate(
+                            offset: const Offset(-5, 12),
+                            child: const Icon(
+                            Icons.eur
+                              Icons.euro_rounded,
+                              color: Colors.white,
+                              size: 88,
+                            ),
+                          ),
                         ),
                       ],
                     ),
